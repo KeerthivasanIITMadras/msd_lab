@@ -56,7 +56,6 @@ void setup() {
   lcd.begin(16, 2);
   pinMode(pin,INPUT);
   myservo.attach(5);
-  myservo2.attach(6);
   // Print a message to the LCD.
 }
 
@@ -66,7 +65,6 @@ void loop() {
   val = map(int(val),0,1023,0,180);
   // Turn on the display:
   myservo.write(val);
-  myservo2.write(val);
   lcd.print(int(val));
   delay(100);
   lcd.clear();
