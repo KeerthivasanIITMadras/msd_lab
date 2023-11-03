@@ -5,13 +5,13 @@ int pos = 0;
 
 void setup() {
   Serial.begin(9600);
-  myservo.attach(5);
+  myservo.attach(6);
   pinMode(12, OUTPUT);  // LED
 }
 
 void loop() {
   for (; pos <= 180; pos += 1) {
-    int s1 = analogRead(A2);
+    int s1 = analogRead(A1);
     Serial.println(s1);
     if (s1 > 200) {
       break;
@@ -20,7 +20,7 @@ void loop() {
     delay(15);
   }
   for (; pos >= 0; pos -= 1) {
-    int s1 = analogRead(A2);
+    int s1 = analogRead(A1);
     Serial.println(s1);
     if (s1 > 200) {
       break;
